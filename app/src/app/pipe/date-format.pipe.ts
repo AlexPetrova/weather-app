@@ -5,9 +5,7 @@ import * as moment from "moment";
   name: 'dateFormat'
 })
 export class DateFormatPipe implements PipeTransform {
-
   transform(value: number, format: string): string {
     return moment.unix(value).format(format);
   }
-
 }
