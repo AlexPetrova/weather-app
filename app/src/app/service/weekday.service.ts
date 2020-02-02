@@ -10,7 +10,13 @@ export class WeekdayService {
     let dayNumber = moment().isoWeekday();
     return Weekdays[dayNumber];
   }
+
+  getDayNameFromTimeStamp(timeStamp: number) {
+    let dayNumber = moment.unix(timeStamp).isoWeekday();
+    return Weekdays[dayNumber]
+  }
 }
+
 export enum Weekdays {
   Monday = 1,
   Tuesday = 2,
