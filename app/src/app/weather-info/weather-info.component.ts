@@ -10,15 +10,13 @@ import { WeekdayService } from '../service/weekday.service';
 })
 export class WeatherInfoComponent implements OnInit {
   weatherData: WeatherAPIResponse = {
-    list: [
-      {
-        weather: [
-          {
-            icon: ""
-          } as Description
-        ],
-        main: {}
-      } as WeatherInfo
+    list: [{
+      weather: [{
+        icon: ""
+      } as Description
+      ],
+      main: {}
+    } as WeatherInfo
     ],
     city: {
       name: "loading..."
@@ -26,11 +24,15 @@ export class WeatherInfoComponent implements OnInit {
   } as WeatherAPIResponse;
   weekday: string;
 
-  constructor(private weatherDataService: WeatherDataService,
+  constructor(
+    private weatherDataService: WeatherDataService,
     private weekdayService: WeekdayService) { }
 
   async ngOnInit() {
     this.weatherData = await this.weatherDataService.getData();
     this.weekday = this.weekdayService.getCurrentDayName();
+  }
+  onCardClicked(index) {
+
   }
 }
