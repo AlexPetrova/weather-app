@@ -1,1 +1,1 @@
-export * from "./WeatherDataService";
+export * from "./weather-data.service";
