@@ -3,5 +3,7 @@
     <div class="weekday"> {{ weekday }} </div>
     <div class="sunrise">Sunrise: {{ weatherData.city.sunrise | dateFormat : "HH:mm" }} </div>
     <div class="sunset">Sunset: {{ weatherData.city.sunset | dateFormat : "HH:mm" }} </div>
-    <app-weather-card *ngFor="let weatherCard of weatherData.list" [weatherInfo]='weatherCard'></app-weather-card>
+    <div class="cards-container">
+        <app-weather-card *ngFor="let weatherCard of weatherData.list" [weatherInfo]='weatherCard'></app-weather-card>
+    </div>
 </div>

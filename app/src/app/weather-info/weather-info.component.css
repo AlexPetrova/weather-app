@@ -1,3 +1,17 @@
 .city {
-    font-size: 25pt;
+    font-size: 30pt;
 }
+
+.weekday{
+    font-size: 15pt;
+    font-style: italic;
+}
+
+.cards-container {
+    display: flex;
+    overflow-x: auto;
+}
+
+/* .cards-container::-webkit-scrollbar {
+    display: none;
+} */

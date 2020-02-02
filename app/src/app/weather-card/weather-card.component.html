@@ -1,1 +1,6 @@
-<div>{{ weatherInfo.dt | dateFormat : "DD-MM-YYYY HH:mm:ss"}}</div>
+<div class="card">
+    <div>{{ weatherInfo.dt | dateFormat : "DD/MM HH:mm:ss"}}</div>
+    <div>{{ weekday }}</div>
+    <i class=" {{iconClass}} icon"></i>
+    <div>{{ weatherInfo.main.temp }}</div>
+</div>
