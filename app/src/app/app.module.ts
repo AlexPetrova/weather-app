@@ -6,6 +6,7 @@ import { WeatherCardComponent } from './weather-card/weather-card.component';
 import { WeatherInfoComponent } from './weather-info/weather-info.component';
 import { WeatherDataService } from './service';
 import { DateFormatPipe } from './pipe/date-format.pipe';
+import { WeekdayService } from './service/weekday.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,10 @@ import { DateFormatPipe } from './pipe/date-format.pipe';
   imports: [
     BrowserModule
   ],
-  providers: [WeatherDataService],
+  providers: [
+    WeatherDataService,
+    WeekdayService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
