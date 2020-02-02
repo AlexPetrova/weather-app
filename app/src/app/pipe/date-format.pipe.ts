@@ -1,12 +1,13 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import * as moment from "moment";
 
 @Pipe({
   name: 'dateFormat'
 })
 export class DateFormatPipe implements PipeTransform {
 
-  transform(value: string): string {
-    return new Date(value).toLocaleString();
+  transform(value: number, format: string): string {
+    return moment.unix(value).format(format);
   }
 
 }

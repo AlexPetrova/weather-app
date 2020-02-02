@@ -8,7 +8,11 @@ import { WeatherAPIResponse } from '../../types';
   styleUrls: ['./weather-info.component.css']
 })
 export class WeatherInfoComponent implements OnInit {
-  weatherData: WeatherAPIResponse = { list: [] } as WeatherAPIResponse;
+  weatherData: WeatherAPIResponse = {
+    list: [], city: {
+      name: "loading..."
+    }
+  } as WeatherAPIResponse;
 
   constructor(private weatherDataService: WeatherDataService) { }
 

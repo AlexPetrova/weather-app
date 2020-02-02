@@ -1,2 +1,6 @@
-<app-weather-card *ngFor="let weatherCard of weatherData.list" [weatherInfo]='weatherCard'>
-</app-weather-card>
+<div class="weather-info">
+    <div class="city">{{ weatherData.city.name }}</div>
+    <div class="sunset"></div>
+    <div class="sunrise"></div>
+    <app-weather-card *ngFor="let weatherCard of weatherData.list" [weatherInfo]='weatherCard'></app-weather-card>
+</div>
