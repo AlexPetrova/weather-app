@@ -8,18 +8,19 @@ import { WeekdayService } from '../service/weekday.service';
   styleUrls: ['./weather-card.component.css']
 })
 export class WeatherCardComponent implements OnInit {
-  @Input() weatherInfo: WeatherInfo;
+  @Input() timeStamp: number;
+  @Input() temp: number;
+  @Input() iconCode: string;
+
   iconClass: string;
   weekday: string;
 
   constructor(private weekdayService: WeekdayService) { }
 
   ngOnInit() {
-    console.log(this.weatherInfo);
-    this.iconClass = WeatherIcons[this.weatherInfo.weather[0].icon];
-    this.weekday = this.weekdayService.getDayNameFromTimeStamp(this.weatherInfo.dt);
+    this.iconClass = WeatherIcons[this.iconCode];
+    this.weekday = this.weekdayService.getDayNameFromTimeStamp(this.timeStamp);
   }
-
 }
 
 export enum WeatherIcons {

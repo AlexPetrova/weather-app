@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherDataService } from '../service';
-import { WeatherAPIResponse } from '../../types';
+import { WeatherAPIResponse, WeatherInfo, Description } from '../../types';
 import { WeekdayService } from '../service/weekday.service';
 
 @Component({
@@ -10,7 +10,17 @@ import { WeekdayService } from '../service/weekday.service';
 })
 export class WeatherInfoComponent implements OnInit {
   weatherData: WeatherAPIResponse = {
-    list: [], city: {
+    list: [
+      {
+        weather: [
+          {
+            icon: ""
+          } as Description
+        ],
+        main: {}
+      } as WeatherInfo
+    ],
+    city: {
       name: "loading..."
     }
   } as WeatherAPIResponse;

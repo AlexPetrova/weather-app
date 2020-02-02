@@ -4,6 +4,8 @@
     <div class="sunrise">Sunrise: {{ weatherData.city.sunrise | dateFormat : "HH:mm" }} </div>
     <div class="sunset">Sunset: {{ weatherData.city.sunset | dateFormat : "HH:mm" }} </div>
     <div class="cards-container">
-        <app-weather-card *ngFor="let weatherCard of weatherData.list" [weatherInfo]='weatherCard'></app-weather-card>
+        <app-weather-card *ngFor="let weatherCard of weatherData.list" [timeStamp]='weatherCard.dt'
+            [temp]='weatherCard.main.temp' [iconCode]='weatherCard.weather[0].icon'>
+        </app-weather-card>
     </div>
 </div>
