@@ -56,7 +56,7 @@ export const WeatherResponseMock: WeatherAPIResponse = {
                     "id": 803,
                     "main": "Clouds",
                     "description": "broken clouds",
-                    "icon": "04n"
+                    "icon": "10n"
                 }
             ],
             "clouds": {
@@ -254,7 +254,7 @@ export const WeatherResponseMock: WeatherAPIResponse = {
                     "id": 800,
                     "main": "Clear",
                     "description": "clear sky",
-                    "icon": "01n"
+                    "icon": "02n"
                 }
             ],
             "clouds": {
@@ -386,7 +386,7 @@ export const WeatherResponseMock: WeatherAPIResponse = {
                     "id": 800,
                     "main": "Clear",
                     "description": "clear sky",
-                    "icon": "01d"
+                    "icon": "02d"
                 }
             ],
             "clouds": {
@@ -518,7 +518,7 @@ export const WeatherResponseMock: WeatherAPIResponse = {
                     "id": 804,
                     "main": "Clouds",
                     "description": "overcast clouds",
-                    "icon": "04n"
+                    "icon": "50n"
                 }
             ],
             "clouds": {
@@ -551,7 +551,7 @@ export const WeatherResponseMock: WeatherAPIResponse = {
                     "id": 804,
                     "main": "Clouds",
                     "description": "overcast clouds",
-                    "icon": "04n"
+                    "icon": "11n"
                 }
             ],
             "clouds": {
@@ -683,7 +683,7 @@ export const WeatherResponseMock: WeatherAPIResponse = {
                     "id": 804,
                     "main": "Clouds",
                     "description": "overcast clouds",
-                    "icon": "04d"
+                    "icon": "11d"
                 }
             ],
             "clouds": {
@@ -749,7 +749,7 @@ export const WeatherResponseMock: WeatherAPIResponse = {
                     "id": 804,
                     "main": "Clouds",
                     "description": "overcast clouds",
-                    "icon": "04n"
+                    "icon": "09n"
                 }
             ],
             "clouds": {
@@ -815,7 +815,7 @@ export const WeatherResponseMock: WeatherAPIResponse = {
                     "id": 804,
                     "main": "Clouds",
                     "description": "overcast clouds",
-                    "icon": "04n"
+                    "icon": "10n"
                 }
             ],
             "clouds": {
@@ -1184,7 +1184,7 @@ export const WeatherResponseMock: WeatherAPIResponse = {
                     "id": 803,
                     "main": "Clouds",
                     "description": "broken clouds",
-                    "icon": "04d"
+                    "icon": "50d"
                 }
             ],
             "clouds": {
@@ -1217,7 +1217,7 @@ export const WeatherResponseMock: WeatherAPIResponse = {
                     "id": 803,
                     "main": "Clouds",
                     "description": "broken clouds",
-                    "icon": "04d"
+                    "icon": "09d"
                 }
             ],
             "clouds": {
