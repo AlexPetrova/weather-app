@@ -3,9 +3,13 @@
     <div class="weekday"> {{ weekday }} </div>
     <div class="sunrise">Sunrise: {{ weatherData.city.sunrise | dateFormat : "HH:mm" }} </div>
     <div class="sunset">Sunset: {{ weatherData.city.sunset | dateFormat : "HH:mm" }} </div>
+    <div>Temperature: {{weatherInfo.main.temp }}</div>
+    <div>Feels like: {{weatherInfo.main.feels_like}}</div>
+    <div>Min temperature: {{weatherInfo.main.temp_min}}</div>
+    <div>Max temperature: {{weatherInfo.main.temp_max}}</div>
     <div class="cards-container">
         <app-weather-card *ngFor="let weatherCard of weatherData.list; let i = index" [timeStamp]='weatherCard.dt'
-            [temp]='weatherCard.main.temp' [iconCode]='weatherCard.weather[0].icon' [index]=i
+            [temp]='weatherCard.main.temp' [iconCode]='weatherCard.weather[0].icon' [index]='i'
             (cardClicked)='onCardClicked($event)'>
         </app-weather-card>
     </div>

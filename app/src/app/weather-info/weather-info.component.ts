@@ -22,6 +22,7 @@ export class WeatherInfoComponent implements OnInit {
       name: "loading..."
     }
   } as WeatherAPIResponse;
+  weatherInfo: WeatherInfo = { main: {} } as WeatherInfo;
   weekday: string;
 
   constructor(
@@ -31,8 +32,10 @@ export class WeatherInfoComponent implements OnInit {
   async ngOnInit() {
     this.weatherData = await this.weatherDataService.getData();
     this.weekday = this.weekdayService.getCurrentDayName();
+    this.weatherInfo = this.weatherData.list[0];
   }
-  onCardClicked(index) {
 
+  onCardClicked(index: number) {
+    this.weatherInfo = this.weatherData.list[index];
   }
 }
