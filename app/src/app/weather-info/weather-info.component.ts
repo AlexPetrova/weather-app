@@ -1,6 +1,7 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { WeatherDataService } from '../service';
 import { WeatherAPIResponse } from '../../types';
+import { WeekdayService } from '../service/weekday.service';
 
 @Component({
   selector: 'app-weather-info',
@@ -13,10 +14,13 @@ export class WeatherInfoComponent implements OnInit {
       name: "loading..."
     }
   } as WeatherAPIResponse;
+  weekday: string;
 
-  constructor(private weatherDataService: WeatherDataService) { }
+  constructor(private weatherDataService: WeatherDataService,
+    private weekdayService: WeekdayService) { }
 
   async ngOnInit() {
     this.weatherData = await this.weatherDataService.getData();
+    this.weekday = this.weekdayService.getCurrentDayName();
   }
 }
