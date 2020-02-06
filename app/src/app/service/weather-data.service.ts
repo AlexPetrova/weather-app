@@ -1,4 +1,4 @@
-import { WeatherAPIResponse } from "../../types";
+import { WeatherAPIResponse } from '../../types';
 import { WeatherResponseMock } from './mock';
 import { Injectable } from '@angular/core';
 

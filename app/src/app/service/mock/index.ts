@@ -1,1 +1,1 @@
-export * from "./WeatherDataMock";
+export * from './weatherDataMock';

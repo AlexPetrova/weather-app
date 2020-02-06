@@ -1,4 +1,4 @@
-import { WeatherAPIResponse } from "../../../types";
+import { WeatherAPIResponse } from '../../../types';
 
 export const WeatherResponseMock: WeatherAPIResponse = {
     "cod": "200",
