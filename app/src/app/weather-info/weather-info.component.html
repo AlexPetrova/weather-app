@@ -1,15 +1,29 @@
 <div class="weather-info">
-    <div class="city"> {{ weatherData.city.name }} </div>
-    <div class="weekday"> {{ weekday }} </div>
-    <div class="sunrise">Sunrise: {{ weatherData.city.sunrise | dateFormat : "HH:mm" }} </div>
-    <div class="sunset">Sunset: {{ weatherData.city.sunset | dateFormat : "HH:mm" }} </div>
-    <div>Temperature: {{weatherInfo.main.temp }}</div>
-    <div>Feels like: {{weatherInfo.main.feels_like}}</div>
-    <div>Min temperature: {{weatherInfo.main.temp_min}}</div>
-    <div>Max temperature: {{weatherInfo.main.temp_max}}</div>
+    <div class="weather-info-container">
+        <div class="full-info">
+            <div class="city"> {{ weatherData.city.name }} </div>
+            <div class="weekday"> {{ weekday }} </div>
+            <div class="sunrise">Sunrise: {{ weatherData.city.sunrise | dateFormat : "HH:mm" }} </div>
+            <div class="sunset">Sunset: {{ weatherData.city.sunset | dateFormat : "HH:mm" }} </div>
+            <div>Temperature: {{ weatherInfo.main.temp | round | unitConverter : unit }}</div>
+            <div>Feels like: {{ weatherInfo.main.feels_like | round | unitConverter : unit }}</div>
+            <div>Min temperature: {{ weatherInfo.main.temp_min | round | unitConverter : unit }}</div>
+            <div>Max temperature: {{ weatherInfo.main.temp_max | round | unitConverter : unit }}</div>
+        </div>
+
+        <div class="temp-units vertical-center-container">
+            <div class="vertical-center">
+                <span [ngClass]="{'active': isCelsius}" class="celsius" (click)='onUnitClick("Celsius")'>Celsius</span>
+                <span class="separator"> | </span>
+                <span [ngClass]="{'active': !isCelsius}" class="fahrenheit"
+                    (click)='onUnitClick("Fahrenheit")'>Fahrenheit</span>
+            </div>
+        </div>
+    </div>
+
     <div class="cards-container">
         <app-weather-card *ngFor="let weatherCard of weatherData.list; let i = index" [timeStamp]='weatherCard.dt'
-            [temp]='weatherCard.main.temp' [iconCode]='weatherCard.weather[0].icon' [index]='i'
+            [temp]='weatherCard.main.temp' [iconCode]='weatherCard.weather[0].icon' [index]='i' [unit]='unit'
             (cardClicked)='onCardClicked($event)'>
         </app-weather-card>
     </div>

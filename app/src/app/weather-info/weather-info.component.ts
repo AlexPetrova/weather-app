@@ -24,9 +24,10 @@ export class WeatherInfoComponent implements OnInit {
   } as WeatherAPIResponse;
   weatherInfo: WeatherInfo = { main: {} } as WeatherInfo;
   weekday: string;
+  unit: TemperatureUnit = TemperatureUnit.Celsius;
+  isCelsius: boolean = true;
 
   @Input() cityID: number = 727011;
-  @Input() units: TemperatureUnit = TemperatureUnit.Celsius;
 
   constructor(
     private weatherDataService: WeatherDataService,
@@ -35,9 +36,9 @@ export class WeatherInfoComponent implements OnInit {
   ngOnInit() {
     this.weatherDataService
       .fromURL("http://api.openweathermap.org/data/2.5/forecast")
-      .withAppID("")
+      .withAppID("4e51ab3136b074020faeff5e727ce88a")
       .forCityID(this.cityID)
-      .withUnitFormat(this.units)
+      .withUnitFormat(this.unit)
       .get()
       .subscribe(data => this.onWeatherData(data),
         error => console.error(error));
@@ -52,5 +53,10 @@ export class WeatherInfoComponent implements OnInit {
 
   onCardClicked(index: number) {
     this.weatherInfo = this.weatherData.list[index];
+  }
+
+  onUnitClick(unit: string) {
+    this.unit = TemperatureUnit[unit];
+    this.isCelsius = TemperatureUnit[unit] === TemperatureUnit.Celsius;
   }
 }
