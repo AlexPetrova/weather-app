@@ -9,7 +9,6 @@ import { WeatherDataService } from './service';
 import { DateFormatPipe } from './pipe/date-format.pipe';
 import { WeekdayService } from './service/weekday.service';
 import { RoundPipe } from './pipe/round.pipe';
-import { TempUnitsComponent } from './temp-units/temp-units.component';
 import { UnitConverterPipe } from './pipe/unit-converter.pipe';
 
 @NgModule({
@@ -19,7 +18,6 @@ import { UnitConverterPipe } from './pipe/unit-converter.pipe';
     WeatherInfoComponent,
     DateFormatPipe,
     RoundPipe,
-    TempUnitsComponent,
     UnitConverterPipe
   ],
   imports: [

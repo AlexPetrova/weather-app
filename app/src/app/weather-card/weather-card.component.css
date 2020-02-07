@@ -59,7 +59,7 @@
     background-image: url("./icons/mist.svg");
 }
 
-.card {
+.weather-card {
     min-width: 150px;
     min-height: 100px;
     text-align: center;

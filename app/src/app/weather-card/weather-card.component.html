@@ -1,6 +1,6 @@
-<div class="card" (click)='onCardClick()'>
+<div class="weather-card" (click)='onCardClick()'>
     <div>{{ timeStamp | dateFormat : "DD/MM HH:mm:ss"}}</div>
     <div>{{ weekday }}</div>
     <i class=" {{iconClass}} icon"></i>
-    <div>{{ temp }}</div>
+    <div>{{ temp | round | unitConverter : unit}}</div>
 </div>
