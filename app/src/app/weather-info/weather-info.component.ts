@@ -36,7 +36,7 @@ export class WeatherInfoComponent implements OnInit {
   ngOnInit() {
     this.weatherDataService
       .fromURL("http://api.openweathermap.org/data/2.5/forecast")
-      .withAppID("4e51ab3136b074020faeff5e727ce88a")
+      .withAppID("")
       .forCityID(this.cityID)
       .withUnitFormat(this.unit)
       .get()
