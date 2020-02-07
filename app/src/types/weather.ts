@@ -79,3 +79,9 @@ export enum WeatherIcons {
     '50d' = 'mist-day',
     '50n' = 'mist-night'
 }
+
+export enum TemperatureUnit {
+    Fahrenheit = "imperial",
+    Celsius = "metric",
+    Kelvin = ""
+}
