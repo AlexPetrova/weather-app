@@ -5,10 +5,22 @@
             <div class="weekday"> {{ weekday }} </div>
             <div class="sunrise">Sunrise: {{ weatherData.city.sunrise | dateFormat : "HH:mm" }} </div>
             <div class="sunset">Sunset: {{ weatherData.city.sunset | dateFormat : "HH:mm" }} </div>
-            <div>Temperature: {{ weatherInfo.main.temp | round | unitConverter : unit }}</div>
-            <div>Feels like: {{ weatherInfo.main.feels_like | round | unitConverter : unit }}</div>
-            <div>Min temperature: {{ weatherInfo.main.temp_min | round | unitConverter : unit }}</div>
-            <div>Max temperature: {{ weatherInfo.main.temp_max | round | unitConverter : unit }}</div>
+            <div>Temperature:
+                {{ weatherInfo.main.temp | round | unitConverter : unit }}
+                {{ unit === "metric" ? "C°" : "F°" }}
+            </div>
+            <div>Feels like:
+                {{ weatherInfo.main.feels_like | round | unitConverter : unit }}
+                {{ unit === "metric" ? "C°" : "F°" }}
+            </div>
+            <div>Min temperature:
+                {{ weatherInfo.main.temp_min | round | unitConverter : unit }}
+                {{ unit === "metric" ? "C°" : "F°" }}
+            </div>
+            <div>Max temperature:
+                {{ weatherInfo.main.temp_max | round | unitConverter : unit }}
+                {{ unit === "metric" ? "C°" : "F°" }}
+            </div>
         </div>
 
         <div class="temp-units vertical-center-container">

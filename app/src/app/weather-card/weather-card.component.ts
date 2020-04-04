@@ -24,7 +24,7 @@ export class WeatherCardComponent implements OnInit {
 
   ngOnInit() {
     this.iconClass = WeatherIcons[this.iconCode];
-    this.weekday = this.weekdayService.getDayNameFromTimeStamp(this.timeStamp);
+    this.weekday = this.weekdayService.getDayName(this.timeStamp);
   }
 
   onCardClick(): void {

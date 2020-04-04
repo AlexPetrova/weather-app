@@ -10,7 +10,6 @@ import { DateFormatPipe } from './pipe/date-format.pipe';
 import { WeekdayService } from './service/weekday.service';
 import { RoundPipe } from './pipe/round.pipe';
 import { UnitConverterPipe } from './pipe/unit-converter.pipe';
-import { SearchModule } from './search/search.module';
 import { MomentService } from './service/moment.service';
 
 @NgModule({
@@ -24,8 +23,7 @@ import { MomentService } from './service/moment.service';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
-    SearchModule
+    HttpClientModule
   ],
   providers: [
     WeatherDataService,
