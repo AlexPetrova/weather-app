@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 import { WeatherDataService } from '../service';
 import { WeatherAPIResponse, WeatherInfo, Description, TemperatureUnit } from '../../types';
 import { WeekdayService } from '../service/weekday.service';
@@ -30,10 +32,13 @@ export class WeatherInfoComponent implements OnInit {
   @Input() cityName: string = "Sofia";
 
   constructor(
+    private route: ActivatedRoute,
     private weatherDataService: WeatherDataService,
     private weekdayService: WeekdayService) { }
 
   ngOnInit() {
+    this.cityName = this.route.snapshot.paramMap.get("cityName");
+
     this.weatherDataService
       .fromURL("http://api.openweathermap.org/data/2.5/forecast")
       .withAppID("")
