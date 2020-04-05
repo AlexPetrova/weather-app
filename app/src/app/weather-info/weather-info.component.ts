@@ -27,7 +27,7 @@ export class WeatherInfoComponent implements OnInit {
   unit: TemperatureUnit = TemperatureUnit.Celsius;
   isCelsius: boolean = true;
 
-  @Input() cityID: number = 727011;
+  @Input() cityName: string = "Sofia";
 
   constructor(
     private weatherDataService: WeatherDataService,
@@ -37,7 +37,7 @@ export class WeatherInfoComponent implements OnInit {
     this.weatherDataService
       .fromURL("http://api.openweathermap.org/data/2.5/forecast")
       .withAppID("")
-      .forCityID(this.cityID)
+      .forCity(this.cityName)
       .withUnitFormat(this.unit)
       .get()
       .subscribe(data => this.onWeatherData(data),

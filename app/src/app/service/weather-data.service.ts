@@ -1,5 +1,4 @@
 import { WeatherAPIResponse, TemperatureUnit } from '../../types';
-import { WeatherResponseMock } from './mock';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -19,15 +18,14 @@ export class WeatherDataService {
         return this.http.get(this.url)
             .map(response => <WeatherAPIResponse>response)
             .catch(error => Observable.throw(error.json().error || 'Server error'));
-        // return WeatherResponseMock
     }
 
     /**
-     * Sets the city id for the call
-     * @param id number id of the city
+     * Sets the city name for the current call
+     * @param name string name of city
      */
-    forCityID(id: number) {
-        this.url += `id=${id}&`;
+    forCity(name: string) {
+        this.url += `q=${name}&`;
         return this;
     }
 
