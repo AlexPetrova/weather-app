@@ -1,0 +1,24 @@
+.cities-nav {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.cities-nav > li {
+    width: 10%;
+    font-size: 24px;
+}
+
+@media all and (max-width: 1000px) {
+    .cities-nav > li {
+        width: 18%;
+    }
+}
+
+@media all and (max-width: 700px) {
+    .cities-nav {
+        flex-direction: column;
+    }
+}
