@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { WeekdayService } from '../service/weekday.service';
-import { WeatherIcons, TemperatureUnit } from '../../types';
+import { WeatherIcons, TemperatureUnit, WeatherCard } from '../../types';
 
 @Component({
   selector: 'app-weather-card',
@@ -8,11 +8,7 @@ import { WeatherIcons, TemperatureUnit } from '../../types';
   styleUrls: ['./weather-card.component.css']
 })
 export class WeatherCardComponent implements OnInit {
-  @Input() timeStamp: number;
-  @Input() temp: number;
-  @Input() iconCode: string;
-  @Input() index: number;
-  @Input() unit: TemperatureUnit;
+  @Input() weatherCardInfo: WeatherCard;
 
   @Output() cardClicked: EventEmitter<number> =
     new EventEmitter<number>();
@@ -23,11 +19,11 @@ export class WeatherCardComponent implements OnInit {
   constructor(private weekdayService: WeekdayService) { }
 
   ngOnInit() {
-    this.iconClass = WeatherIcons[this.iconCode];
-    this.weekday = this.weekdayService.getDayName(this.timeStamp);
+    this.iconClass = WeatherIcons[this.weatherCardInfo.iconCode];
+    this.weekday = this.weekdayService.getDayName(this.weatherCardInfo.timeStamp);
   }
 
   onCardClick(): void {
-    this.cardClicked.emit(this.index);
+    this.cardClicked.emit(this.weatherCardInfo.index);
   }
 }

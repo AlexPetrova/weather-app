@@ -1,9 +1,9 @@
 <div class="weather-card" (click)='onCardClick()'>
-    <div>{{ timeStamp | dateFormat : "DD/MM HH:mm:ss"}}</div>
+    <div>{{ weatherCardInfo.timeStamp | dateFormat : "DD/MM HH:mm:ss"}}</div>
     <div>{{ weekday }}</div>
-    <i class=" {{iconClass}} icon"></i>
+    <i class="{{iconClass}} icon"></i>
     <div>
-        {{ temp | unitConverter : unit | round}}
-        {{ unit === "metric" ? "C°" : "F°" }}
+        {{ weatherCardInfo.temp | unitConverter : weatherCardInfo.unit | round}}
+        {{ weatherCardInfo.unit === "metric" ? "C°" : "F°" }}
     </div>
 </div>

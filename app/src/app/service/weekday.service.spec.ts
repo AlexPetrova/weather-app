@@ -1,5 +1,3 @@
-import { TestBed } from '@angular/core/testing';
-
 import { WeekdayService } from './weekday.service';
 import { MomentService } from './moment.service';
 import { Weekdays } from '../../types';

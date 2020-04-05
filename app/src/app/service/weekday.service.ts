@@ -14,7 +14,7 @@ export class WeekdayService {
    * Returns the name of the week day  
    */
   getCurrentDayName(): string {
-    let dayNumber = this.momentService.isoWeek();
+    let dayNumber = this.momentService.isoWeekday(new Date().getTime());
     return Weekdays[dayNumber];
   }
 
